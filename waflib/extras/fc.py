@@ -182,6 +182,6 @@ class fcprogram_test(fcprogram):
 
 		return proc.returncode
 
-class fcstlib(ccroot.static_link):
+class fcstlib(ccroot.stlink_task):
 	"""just use ar normally"""
 	pass # do not remove the pass statement
