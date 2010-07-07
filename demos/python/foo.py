@@ -1,0 +1,4 @@
+
+zbr = "bar"
+
+assert zbr
