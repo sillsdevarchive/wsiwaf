@@ -1,0 +1,3 @@
+def ping(ctx):
+	print('→ ping from ' + ctx.path.abspath())
+	ctx.recurse('src')
