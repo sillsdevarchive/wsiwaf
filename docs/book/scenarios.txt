@@ -403,7 +403,7 @@ void ping() {
 }
 ---------------
 
-The files are only compiled when they change though, so it is necessary to find a way to force the recompilation of a the file containing the macros. To sum up, the compilation should be performed whenever:
+The files are only compiled when they change though, so it is necessary to find a way to force the +about.c+ recompilation. To sum up, the compilation should be performed whenever:
 
 . One of the c files of the project is compiled
 . The link flags for any task change
