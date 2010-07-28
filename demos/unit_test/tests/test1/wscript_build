@@ -12,6 +12,6 @@ bld(
 	target   = 'unit_test_program',
 	uselib   = 'CPPUNIT',
 	uselib_local = 'unittestmain useless',
-	ut_cwd   = bld.path.find_dir('.').abspath(),
+	ut_cwd   = bld.path.abspath(),
 	ut_fun   = fun
 )
