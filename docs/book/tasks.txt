@@ -35,7 +35,7 @@ def build(ctx):
 
 Each green task must be executed after one yellow task and each pink task must be executed after one blue task. Because there is only one group by default, the parallel execution will be similar to the following:
 
-image::tasks_nogroup{PIC}["One build group"{backend@docbook:,width=400:},align="center"]
+image::tasks_nogroup{PIC}["One build group"{backend@docbook:,width=420:},align="center"]
 
 We will now modify the example to add one more build group.
 
