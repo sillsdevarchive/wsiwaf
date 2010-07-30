@@ -14,3 +14,11 @@ def build(ctx):
 	for x in range(4):
 		ctx(rule='sleep 2', color='GREEN', name='short task')
 	ctx(rule='sleep 5', color='RED', name='long task')
+
+from waflib import Task
+
+old = Task.set_file_constraints
+def meth(lst):
+	lst.sort()
+	old(lst)
+Task.set_file_constraints = meth
