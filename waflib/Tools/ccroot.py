@@ -411,4 +411,5 @@ def process_lib(self):
 		break
 	else:
 		raise Errors.WafError('could not find library %r' % self.name)
-	tsk = self.create_task('fake_%s' % self.lib_type, [], [node])
+	self.link_task = self.create_task('fake_%s' % self.lib_type, [], [node])
+	self.target = self.name
