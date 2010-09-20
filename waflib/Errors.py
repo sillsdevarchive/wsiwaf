@@ -53,3 +53,11 @@ class BuildError(WafError):
 class ConfigurationError(WafError):
 	"""configuration exception"""
 	pass
+
+class TaskRescan(WafError):
+	"""task-specific exception type, trigger a signature recomputation"""
+	pass
+
+class TaskNotReady(WafError):
+	"""task-specific exception type, raised when the task signature cannot be computed"""
+	pass
