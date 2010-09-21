@@ -76,3 +76,4 @@ def build_tests(ctx, fonts, target) :
 				ctx(rule = '${XETEX} --no-pdf --output-directory=' + targ.bld_dir() + ' ${SRC}', source = n, target = targ.change_ext('.xdv'))
 				if target == 'pdfs' :
 					ctx(rule = '${XDVIPDFMX} -o ${TGT} ${SRC}', source = targ.change_ext('.xdv'), target = targ.change_ext('.pdf'))
+
