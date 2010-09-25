@@ -9,5 +9,5 @@ bld.shlib(
 	gir      = 'hello-1.0',
 	#gir_path  = '/tmp',
 	#vapi_path = '/tmp',
-	#pkg_name = 'hello'
+	pkg_name = 'hello'
 	)
