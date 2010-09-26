@@ -324,17 +324,6 @@ def dist(ctx):
 	# copy the files into the temporary folder
 	copytree('.', tmp_folder, getattr(Context.g_module, Context.OUT, None))
 
-	# undocumented hook for additional cleanup
-	dist_hook = getattr(Context.g_module, 'dist_hook', None)
-	if dist_hook:
-		back = os.getcwd()
-		os.chdir(tmp_folder)
-		try:
-			dist_hook()
-		finally:
-			# go back to the root directory
-			os.chdir(back)
-
 	if g_gz in ['gz', 'bz2']:
 		tar = tarfile.open(arch_name, 'w:' + g_gz)
 		tar.add(tmp_folder)
