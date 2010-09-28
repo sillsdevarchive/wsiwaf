@@ -60,3 +60,8 @@ def build(bld):
 		features = 'fc fcprogram',
 		source   = 'src/calculator_main.f src/calculator.f',
 		target   = 'calculator')
+
+	bld(
+		features = 'fc fcstlib',
+		source = 'mod/two_mods.f',
+		target = 'mod/two_mods')
