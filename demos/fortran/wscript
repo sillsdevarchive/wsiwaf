@@ -63,5 +63,5 @@ def build(bld):
 
 	bld(
 		features = 'fc fcstlib',
-		source = 'mod/two_mods.f',
+		source = 'mod/two_mods.f90',
 		target = 'mod/two_mods')
