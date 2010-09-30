@@ -10,8 +10,10 @@ from waflib.Configure import conf
 
 @conf
 def find_ar(conf):
+	"""used by other waf tools"""
 	conf.load('ar')
 
 def configure(conf):
+	"""find the ar program"""
 	conf.find_program('ar', var='AR')
 	conf.env.ARFLAGS = 'rcs'
