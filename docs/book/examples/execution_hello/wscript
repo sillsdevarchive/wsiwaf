@@ -1,4 +1,9 @@
 #! /usr/bin/env python
 
+"""
+Move the folder to /tmp for example, and execute
+$ waf hello
+"""
+
 def hello(ctx):
 	print('hello, world!')
