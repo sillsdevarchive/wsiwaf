@@ -1,8 +1,5 @@
 #! /usr/bin/env python
 
-def configure(ctx):
-	ctx.load('java')
-
 def build(bld):
 
 	bld(features  = 'javac',
@@ -18,7 +15,4 @@ def build(bld):
 		name      = 'cats',
 		use       = 'cats-src'
 	)
-
-
-
 
