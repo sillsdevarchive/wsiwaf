@@ -27,3 +27,4 @@ def build(bld):
 		target = 'test',
 		source = 'b/test.c',
 		use    = 'b')
+
