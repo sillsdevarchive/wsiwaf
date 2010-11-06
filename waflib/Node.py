@@ -672,3 +672,11 @@ pickle_lock = Utils.threading.Lock()
 class Nod3(Node):
 	"""mandatory subclass for thread-safe node serialization"""
 	pass # do not remove
+
+
+if sys.platform == 'win32':
+	def listdir(self):
+		if not self.parent:
+			return list(self.children.keys())
+		return Utils.listdir(self.abspath())
+	Node.listdir = listdir
