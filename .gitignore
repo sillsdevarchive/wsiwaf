@@ -1,0 +1,8 @@
+.lock*
+.conf*
+.waf*
+build
+*~
+*.pyc
+c4che
+config.log
