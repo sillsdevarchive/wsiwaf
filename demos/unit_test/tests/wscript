@@ -7,5 +7,5 @@ def build(bld):
 	obj = bld(
 			features = 'cxx cxxstlib',
 			source   = 'main.cpp',
-			uselib   = 'CPPUNIT',
+			use      = 'CPPUNIT',
 			target   = 'unittestmain')
