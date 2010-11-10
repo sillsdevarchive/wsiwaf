@@ -435,15 +435,24 @@ class Node(object):
 
 		* ``**/*`` find all files recursively
 		* ``**/*.class`` find all files ending by .class
-		* ``..`` find all files having two characters such as 'aa' or 'bb'
+		* ``..`` find files having two dot characters
 
 		For more information see http://ant.apache.org/manual/dirtasks.html
-
 		GOTCHA: the nodes that correspond to files and folders that do not exist will be removed
+		This method calls ant_iter internally
 
+		:param incl: ant patterns or list of patterns to include
+		:type incl: string or list of strings
+		:param excl: ant patterns or list of patterns to exclude
+		:type excl: string or list of strings
 		:param dir: return folders too (False by default)
+		:type dir: boolean
 		:param src: return files (True by default)
+		:type src: boolean
 		:param remove: remove files (True by default)
+		:type remove: boolean
+		:param maxdepth: maximum depth of recursion
+		:type maxdepth: int
 		"""
 
 		src = kw.get('src', True)
