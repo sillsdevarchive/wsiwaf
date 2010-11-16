@@ -97,5 +97,3 @@ def build_tests(ctx, fonts, target) :
 					taskgens = [fontmap[f].target + "_" + m])
 				if target == 'pdfs' :
 					ctx(rule = '${XDVIPDFMX} -o ${TGT} ${SRC}', source = targ.change_ext('.xdv'), target = targ.change_ext('.pdf'))
-
-
