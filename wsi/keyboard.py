@@ -49,3 +49,4 @@ class Keyboard(object) :
 		bld(rule = '${KMNXML2SVG} -s ' + str(self.fontsize) + ' -f "' + self.fontname + '" ${SRC} ${TGT}', source = self.xml, target = self.svg)
 		bld(rule = '${CP} ${SRC} ${TGT}', source = self.font, target = self.kbdfont)
 		bld(rule = 'FONTCONFIG=' + self.fontdir + " ${INKSCAPE} -f ${SRC[0].bldpath()} -A ${TGT} -T -d 2400", shell = 1, source = [self.svg, self.kbdfont], target = self.pdf)
+

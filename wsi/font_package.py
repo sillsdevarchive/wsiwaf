@@ -114,3 +114,4 @@ def add_build() :
 		if old_build : old_build(bld)
 
 	Context.g_module.build = build
+
