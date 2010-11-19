@@ -1,4 +1,5 @@
-java
-====
+
+javaw
+=====
 
 .. automodule:: waflib.Tools.javaw
