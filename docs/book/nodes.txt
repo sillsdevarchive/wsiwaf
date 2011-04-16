@@ -323,9 +323,11 @@ To actually copy a file into the corresponding build directory with the same nam
 [source,python]
 ---------------
 def build(bld):
-	bld(rule   = 'cp ${SRC}' ${TGT},
+	bld(
+		rule   = 'cp ${SRC}' ${TGT},
 		source = bld.path.make_node('foo.txt'),
-		target = bld.path.get_bld().make_node('foo.txt'))
+		target = bld.path.get_bld().make_node('foo.txt')
+	)
 ---------------
 
 // ==== Serialization concerns
