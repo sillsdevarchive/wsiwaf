@@ -25,7 +25,7 @@ def pgfortran_flags(conf):
 	v['FCFLAGS_DEBUG'] = ['-Minform=inform', '-Mstandard'] # why not
 	v['FCSTLIB_MARKER'] = '-Bstatic'
 	v['FCSHLIB_MARKER'] = '-Bdynamic'
-	v['SONAME_ST']      = '-soname %s'
+	v['SONAME_ST']	  = '-soname %s'
 
 @conf
 def get_pgfortran_version(conf,fc):
