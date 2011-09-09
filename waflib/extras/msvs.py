@@ -340,9 +340,9 @@ def compile_template(line):
 	return Task.funex(fun)
 
 
-re_blank = re.compile('\n\s*\n', re.M)
+re_blank = re.compile('(\n\r\\s)*\n', re.M)
 def rm_blank_lines(txt):
-	txt = re_blank.sub('\n', txt)
+	txt = re_blank.sub('\r\n', txt)
 	return txt
 
 BOM = '\xef\xbb\xbf'
@@ -360,7 +360,7 @@ def stealth_write(self, data, flags='wb'):
 		data = data.decode(sys.getfilesystemencoding(), 'replace')
 		data = data.encode('utf-8')
 
-	if self.name.endswith('.xml'):
+	if self.name.endswith('.vcproj') or self.name.endswith('.vcxproj'):
 		data = BOM + data
 
 	try:

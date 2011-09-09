@@ -50,25 +50,25 @@ detect_clang = lambda env: (PLATFORM == 'darwin') and 'clang-darwin' or 'clang'
 detect_mingw = lambda env: (re.search('MinGW', env.CXX[0])) and 'mgw' or 'gcc'
 BOOST_TOOLSETS = {
 	'borland':  'bcb',
-	'clang':    detect_clang,
-	'como':     'como',
-	'cw':       'cw',
+	'clang':	detect_clang,
+	'como':	 'como',
+	'cw':	   'cw',
 	'darwin':   'xgcc',
-	'edg':      'edg',
-	'g++':      detect_mingw,
-	'gcc':      detect_mingw,
-	'icpc':     detect_intel,
-	'intel':    detect_intel,
-	'kcc':      'kcc',
-	'kylix':    'bck',
+	'edg':	  'edg',
+	'g++':	  detect_mingw,
+	'gcc':	  detect_mingw,
+	'icpc':	 detect_intel,
+	'intel':	detect_intel,
+	'kcc':	  'kcc',
+	'kylix':	'bck',
 	'mipspro':  'mp',
-	'mingw':    'mgw',
-	'msvc':     'vc',
-	'qcc':      'qcc',
-	'sun':      'sw',
+	'mingw':	'mgw',
+	'msvc':	 'vc',
+	'qcc':	  'qcc',
+	'sun':	  'sw',
 	'sunc++':   'sw',
 	'tru64cxx': 'tru',
-	'vacpp':    'xlc'
+	'vacpp':	'xlc'
 }
 
 
@@ -188,12 +188,12 @@ def boost_get_libs(self, *k, **kw):
 	'''
 	path, files = self.__boost_get_libs_path(**kw)
 	t = []
-	if kw['mt']:
+	if kw.get('mt', False):
 		t.append('mt')
-	if kw['abi']:
+	if kw.get('abi', None):
 		t.append(kw['abi'])
 	tags = t and '(-%s)+' % '-'.join(t) or ''
-	toolset = '(-%s[0-9]{0,3})+' % self.boost_get_toolset(kw['toolset'])
+	toolset = '(-%s[0-9]{0,3})+' % self.boost_get_toolset(kw.get('toolset', ''))
 	version = '(-%s)+' % self.env.BOOST_VERSION
 
 	def find_lib(re_lib, files):
@@ -253,16 +253,16 @@ def check_boost(self, *k, **kw):
 	self.env.BOOST_VERSION = self.boost_get_version(self.env['INCLUDES_%s' % var])
 	self.end_msg(self.env.BOOST_VERSION)
 	if Logs.verbose:
-		Logs.pprint('CYAN', '    path : %s' % self.env['INCLUDES_%s' % var])
+		Logs.pprint('CYAN', '	path : %s' % self.env['INCLUDES_%s' % var])
 
 	if not params['lib']:
 		return
 	self.start_msg('Checking boost libs')
-	suffix = params['static'] and 'ST' or ''
+	suffix = params.get('static', 'ST') or ''
 	path, libs = self.boost_get_libs(**params)
 	self.env['%sLIBPATH_%s' % (suffix, var)] = [path]
 	self.env['%sLIB_%s' % (suffix, var)] = libs
 	self.end_msg('ok')
 	if Logs.verbose:
-		Logs.pprint('CYAN', '    path : %s' % path)
-		Logs.pprint('CYAN', '    libs : %s' % libs)
+		Logs.pprint('CYAN', '	path : %s' % path)
+		Logs.pprint('CYAN', '	libs : %s' % libs)
