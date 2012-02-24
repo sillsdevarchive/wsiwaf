@@ -6,12 +6,12 @@ Support for converting linked targets to ihex, srec or binary files using
 objcopy. Use the 'objcopy' feature in conjuction with the 'cc' or 'cxx'
 feature. The 'objcopy' feature uses the following attributes:
 
-objcopy_bfdname        Target object format name (eg. ihex, srec, binary).
+objcopy_bfdname		Target object format name (eg. ihex, srec, binary).
 					   Defaults to ihex.
-objcopy_target         File name used for objcopy output. This defaults to the
+objcopy_target		 File name used for objcopy output. This defaults to the
 					   target name with objcopy_bfdname as extension.
 objcopy_install_path   Install path for objcopy_target file. Defaults to ${PREFIX}/fw.
-objcopy_flags          Additional flags passed to objcopy.
+objcopy_flags		  Additional flags passed to objcopy.
 """
 
 from waflib.Utils import def_attrs
