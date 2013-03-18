@@ -40,4 +40,3 @@ toolbox/:::
 texts/:::
 	Contains sample texts in the language, including `.pdf` to show how the text should be rendered.
 
-
