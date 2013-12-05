@@ -108,6 +108,9 @@ class Keyboard(object) :
 		bld(rule = '${CP} ${SRC} ${TGT}', source = infont, target = self.kbdfont)
 		bld(rule = '${KMNXML2SVG} -s ' + str(self.fontsize) + ' -f "' + self.fontname + '" ${SRC} ${TGT}', source = xml, target = svg)
 
+	def build_test(self, bld, test='test') :
+		pass
+
 class MSKBD(object) :
 
 	arches = ('i686', 'x86_64')
