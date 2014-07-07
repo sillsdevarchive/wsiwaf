@@ -380,6 +380,10 @@ class Subset(Font) :
 	def get_build_tools(self, ctx) :
 		return ['ttfsubset']
 
+	def get_sources(self, ctx) :
+		res = get_all_sources(self, ctx, 'config')
+		return res
+
 	def build(self, bld) :
 		srcs = []
 		parms = getattr(self, 'params', '')
