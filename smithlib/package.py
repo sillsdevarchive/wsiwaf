@@ -244,7 +244,7 @@ class Package(object) :
 
 	def execute_zip(self, bld) :
 		if not self.zipfile :
-			self.zipfile = "%s/%s-%s.zip" % ((self.zipdir or '.'), self.appname, self.version)
+			self.zipfile = "%s/%s-%s.zip" % ((self.zipdir or 'releases'), self.appname, self.version)
 
 		import zipfile
 		znode = bld.path.find_or_declare(self.zipfile)      # create dirs
