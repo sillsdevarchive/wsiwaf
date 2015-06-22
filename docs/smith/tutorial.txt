@@ -48,7 +48,7 @@ smith build
 
 This command tells smith to go and build all the objects the `wscript` says to
 be built. In this case just the simple `Loma.ttf` which will appear in
-`buildlinux2`. Not very exciting, but a good start.
+`buildlinux2` (or results depending on the content of the out variable). Not very exciting, but a good start.
 
 ==== font2 - Multiple fonts ====
 
@@ -288,7 +288,7 @@ riwordsu-short_loma-bold_gr.pdf. The `_ot` extension is used for OpenType
 rendered texts and `_gr` for the graphite rendered texts. The texts are rendered
 using XeTeX.
 
-The other file in the tests directory is `patani-malay.htxt`. The `h` in htxt
+The other file in the tests directory is `patani-malay.htxt`. (You put these files in the tests directory as defined by the TESTDIR variable). The `h` in htxt
 tells smith to preprocess the file to convert strings of the form \uxxxx into
 the corresponding Unicode character before rendering. This makes it easier to
 create test files.
@@ -313,7 +313,7 @@ A further target that is useful is the ability to create font reports that show
 all the glyphs in a font. We set this as a font product rather than a kind of
 test, in line 19. The default target filename is the same as the `target` .ttf
 file but with a .pdf extension instead. The file is built as part of `smith
-build`.
+build` using the fret command.
 
 There are two other targets that this wscript enables:
 
@@ -324,8 +324,8 @@ smith xfont
 
 Line 9 specifies a string that will be used in creating the waterfall files and also the cross font
 summary files. `smith waterfall` creates one file per font and technology and stores it in
-the `waterfall` sub directory of the `TESTRESULTSDIR`, prefixing each font and technology with
-`waterfall`. `smith xfont` creates one file per technology in the `TESTRESULTSDIR` called `Crossfont_ot.pdf`
+the `waterfall` sub directory of the `TESTRESULTSDIR`, including in the name of each resulting filename font and technology with
+`waterfall` as the prefix. `smith xfont` creates one file per technology in the `TESTRESULTSDIR` called `Crossfont_ot.pdf`
 or `Crossfont_gr.pdf` that contains the test string output with the font name, one per line.
 
 Another feature of smith is its ability to integrate with `graide`. Graide is a
@@ -430,7 +430,7 @@ Our new command `report` also uses a `tests()` object. But in this, we give
 another dictionary of key, value pairs. The key is a subdirectory under the
 TESTRESULTSDIR and the value is a `cmd()` object that gives the command to
 execute. In this case we are running the fontreport program. The reference to
-'${SRC[0]}` says to use the first element from the inputs. The inputs has 3
+`${SRC[0]}` says to use the first element from the inputs. The inputs has 3
 elements: the font, the text file to test and the corresponding `standards/`
 font file. We only need the first of these and list indices all start from 0 in
 python. In addition, we use the parameter `coverage` to say that we only want to
