@@ -6,9 +6,14 @@ are made up of a number of key elements: fonts, keyboards, sort orders.
 
 === Installation ===
 
-Installing smith is simple. It consists of copying the smith file to a
-suitable directory, usually the project directory where it can be shared within
-any version control system. In addition a file `wscript` needs to be created
+Installing smith consists of installing from a Ubuntu package. (See Tools section in this manual).
+
+Manual installation from source and copying of the generated smith file inside
+the project directory (where it can be shared within any version control
+system) is another option but staying with the packaged version should be
+a lot easier.
+
+In addition a file `wscript` needs to be created
 to control the build process. This wscript file is in fact a python program
 but the way it is run is designed to hide that as much from the unsuspecting
 user as possible. Thus only those who want to get into the programming aspects
