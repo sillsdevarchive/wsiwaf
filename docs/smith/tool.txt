@@ -10,7 +10,7 @@ The repositories (or PPA: Private Package Repositories) to add are:
 
 [source,sh]
 ----
-sudo add-apt-repository ppa:smith-dev/smith
+sudo add-apt-repository ppa:silnrsi/smith
 ----
 
 [source,sh]
@@ -42,7 +42,7 @@ Install other useful utilities to collaborate with version control:
 
 [source,sh]
 ----
-sudo apt-get install mercurial git gitg tortoisehg meld tortoisehg-nautilus
+sudo apt-get install mercurial git gitg tortoisehg meld tortoisehg-nautilus rabbitvcs-nautilus
 ----
 
 Install other useful utilities to make working with smith projects easier:
