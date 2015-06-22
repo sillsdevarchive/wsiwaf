@@ -42,14 +42,15 @@ Install other useful utilities to collaborate with version control:
 
 [source,sh]
 ----
-sudo apt-get install mercurial git gitg tortoisehg meld tortoisehg-nautilus rabbitvcs-nautilus
+sudo apt-get install mercurial tortoisehg meld tortoisehg-nautilus
+sudo apt-get install git gitg rabbitvcs-nautilus
 ----
 
 Install other useful utilities to make working with smith projects easier:
 
 [source,sh]
 ----
-sudo apt-get install nautilus-open-terminal unity-tweak-tool tree gedit-plugins geany
+sudo apt-get install nautilus-open-terminal unity-tweak-tool tree geany
 ----
 
 Other SIL software is available from the main SIL repository for Ubuntu:
