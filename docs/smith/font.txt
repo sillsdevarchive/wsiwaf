@@ -377,10 +377,10 @@ waterfallsizes::
 	This is a number that specifies the font size in points. Defaults to the global TESTFONTSIZE (in points) and failing that to 12pt.
 
 sizefactor::
-	This specifies a factor to multiply each size by to get the linespacing. It default to the global TESTLINESPACINGFACTOR and defaults to 1.2
+	This specifies a factor to multiply each size by to get the linespacing. It defaults to the global TESTLINESPACINGFACTOR and defaults to 1.2
 
 featstr::
-	Specifies the feature string that should passed to XeTeX after the script information. Each feature is separated from the next by a colon. The language feature is called language, as in language=pal.
+	This specifies the feature string that should passed to XeTeX after the script information. Each feature is separated from the next by a colon. The language feature is called language, as in language=pal.
 
 
 ==== svg ====
